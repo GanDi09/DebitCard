@@ -2,16 +2,18 @@ package ru.netology;
 
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selenide.*;
 
 
 public class DebitCardTest {
+    private WebDriver driver;
 
 
     @Test
-    void shouldTest(){
+    void shouldTest() {
         open("http://localhost:9999");
         $("span[data-test-id=name] input").setValue("Генадий");
         $("span[data-test-id=phone] input").setValue("+79057359359");
