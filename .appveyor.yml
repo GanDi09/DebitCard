@@ -1,12 +1,12 @@
-image: Ubuntu 
+image: Ubuntu
 
-stack: jdk 11  
+stack: jdk 11
 
 branches:
   only:
-    - main 
+    - main
 
-build: off 
+build: off
 
 install:
   - java -jar ./artifacts/app-order.jar &
@@ -14,7 +14,6 @@ install:
 
 
 build_script:
-  - gradlew test -Dselenide.headless=true
+  -  gradlew test -Dselenide.headless=true
   - chmod +x gradlew
   - ./gradlew test --info
-
