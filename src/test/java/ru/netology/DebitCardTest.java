@@ -42,7 +42,7 @@ public class DebitCardTest {
     void shouldTest(){
         driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Генадий");
-        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+7905735935");
+        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79057359353");
         driver.findElement(By.cssSelector("[data-test-id=agreement")).click();
         driver.findElement(By.className("button__text")).click();
 
