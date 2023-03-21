@@ -44,9 +44,10 @@ public class DebitCardTest {
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Генадий");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+7905735935");
         driver.findElement(By.cssSelector("[data-test-id=agreement")).click();
-        driver.findElement(By.className("[button__text]")).click();
+        driver.findElement(By.className("button__text")).click();
+
         String expected = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
-        String actual = driver.findElement(By.cssSelector("[data-test-id=rder-success]")).getText().trim();
+        String actual = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText().trim();
         assertEquals(expected, actual);
     }
 }
