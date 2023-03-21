@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -14,14 +16,19 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class DebitCardTest {
     private WebDriver driver;
 
+
     @BeforeAll
     static void setUpAll(){
-        System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
     }
 
     @BeforeEach
     void setUp(){
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
     }
     @AfterEach
     void tearDown(){
